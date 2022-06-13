@@ -1,0 +1,128 @@
+
+:root {
+    /* primary colors */
+    --clr-bright-orange: hsl(31, 77%, 52%);
+    --clr-dark-cyan: hsl(184, 100%, 22%);
+    --clr-very-dark-cyan: hsl(179, 100%, 13%);
+
+    /* neutral colors` */
+    --clr-transparent-white: hsl(0, 0%, 100%, 0.75);
+    --clr-light-gray: hsl(0, 0%, 95%);
+
+    --fs-300: 15px;
+    --fs-400: 16px;
+
+    --fw-400: 400;
+    --fw-700: 400;
+
+    --ff-primary: 'Big Shoulders Display',
+        cursive;
+
+    --ff-secondary: 'Lexend Deca',
+        sans-serif;
+
+
+}
+
+/* custom styles */
+.bg-orange {
+    background-color: var(--clr-bright-orange);
+}
+
+.bg-dark-cyan {
+    background-color: var(--clr-dark-cyan);
+}
+
+.bg-very-dark-cyan {
+    background-color: var(--clr-very-dark-cyan);
+}
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.cards {
+    display: flex;
+}
+
+.card-header {
+    font-family: var(--ff-primary);
+    font-weight: var(--fw-700);
+    color: var(--clr-light-gray);
+}
+
+.card-body {
+    font-family: var(--ff-secondary);
+    font-weight: var(--fw-400);
+    color: var(--clr-transparent-white);
+}
+
+.card-img,
+.card-header,
+.card-body{
+    padding: 1rem;
+}
+
+body {
+    background-color: var(--clr-light-gray);
+}
+
+.cards {
+    max-width: 800px;
+    margin: 0 auto;
+    margin-top: 50px;
+}
+
+.card {
+    position: relative;
+    padding: 1.5rem;
+    flex-basis: 1;
+    
+}
+
+.card-body {
+    padding-bottom: 8rem;
+}
+
+.btn-container {
+    width: 100%;
+    /* margin: 0 auto; */
+    /* border: solid; */
+    padding: 30px;
+}
+
+.card-btn {
+    /* position: absolute; */
+    /* bottom: 20rem; */
+    /* left: 21.5%; */
+    background-color: inherit;
+    padding: 10px 18px;
+    border-radius: 51px;
+    border: solid var(--clr-transparent-white);
+    cursor: pointer;
+
+}
+
+.card-btn a {
+    text-decoration: none;
+    color: var(--clr-transparent-white);
+}
+
+@media screen and (max-width: 680px) {
+    .cards {
+        flex-direction: column;
+    }
+
+    .card-header,
+    .card-body {
+        text-align: center;
+    }
+
+    .card-btn {
+        
+    }
+}
