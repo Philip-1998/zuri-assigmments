@@ -70,6 +70,12 @@ h2 {
     border-radius: 25px;
     cursor: pointer;
     box-shadow: var(--bs);
+    transition: transform 300ms ease-in-out;
+    
+}
+
+.btn:hover {
+    transform: scale(1.1);
 }
 
 .header {
