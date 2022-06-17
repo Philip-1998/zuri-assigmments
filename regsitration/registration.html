@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="css/styles.css"> -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+     :root {
+     /* primary colors */
+     --clr-primary-red: rgb(255, 122, 122);
+     --clr-primary-green: rgb(56, 204, 140); 
+
+     /* accent */
+     --clr-accent: hsl(248, 32%, 49%);
+     
+     /* neutral */
+
+     --clr-neutral-dark-blue: hsl(249, 10%, 26%);
+     --clr-neutral-gray-blue: hsl(246, 25%, 77%); 
+
+     --bg-intro : url("../images/bg-intro-mobile.png");
+
+     --container-width: 90%;
+
+     --bs: 0.25em 0.25em 0.75em rgba(0, 0, 0, 0.25)
+ }
+
+ * {
+     padding: 0;
+     margin: 0;
+     box-sizing: border-box;
+ }
+
+ body {
+    font-family: 'Poppins', sans-serif;
+    background-image: var(--bg-intro);
+    background-color: var(--clr-primary-red);
+    background-repeat: repeat;
+ }
+
+ .container {
+     max-width: var(--container-width);
+     margin: auto;
+     height: 100vh;
+     
+ }
+
+ .text > * {
+     text-align: center;
+     color: #fff;
+ }
+
+ .text > .text-header {
+     font-weight: 700;
+     padding: 1em 2em;
+    
+ }
+
+ .text > .text-paragraph {
+     font-weight: 400;
+     margin-bottom: 2.5em;
+ }
+
+ .main-title {
+     background-color: var(--clr-accent);
+     text-align: center;
+     color: #fff;
+     padding: 1.5em 4em;
+     font-weight: 400;
+     border-radius: 15px;
+     box-shadow: var(--bs);
+ }
+
+ .main-form {
+     background-color: #fff;
+     padding: 1.5em;
+     margin-top: 3em;
+     border-radius: 15px;
+     box-shadow: var(--bs);
+ }
+
+ .main-form > * input {
+     width: 100%;
+     padding: 1em;
+     margin-bottom: 2rem;
+     border: 1px solid var(--clr-neutral-gray-blue);
+ }
+
+ .main-form > * input[type=submit] {
+     background-color: var(--clr-primary-green);
+     border: none;
+     box-shadow: var(--bs);
+     color: #fff;
+     font-weight: 500;
+     border-radius: 5px;
+     cursor: pointer;
+     
+ } 
+
+ .main-form > * input[type=submit]:hover {
+    background-color: rgba(56, 204, 140,0.8);
+ }
+
+ .main-footer {
+     text-align: center;
+     font-size: 10px;
+ }
+
+ .main-footer span {
+     color: var(--clr-primary-red);
+     font-weight: 600;
+ }
+
+ @media screen and (min-width:992px) {
+     :root {
+         --container-width: 1000px
+     }
+
+     .container {
+         display: grid;
+         grid-template-columns: repeat(12,1fr);
+         gap: 4rem;
+     }
+
+     .container > *:nth-child(1) {
+         grid-column: 1 / 7;
+         align-self: center;
+     }
+
+     .container > *:nth-child(2) {
+         grid-column: 7 / 13;
+         align-self: center;
+     }
+
+     .text > .text-header {
+        text-align: left;
+        font-size: 2.3rem;
+        font-weight: 700;
+        padding: 1em 0;
+       
+    }
+   
+    .text > .text-paragraph {
+        font-size: 1.3rem;
+        font-weight: 400;
+        margin-bottom: 2.5em;
+        text-align: left;
+    }
+
+     
+ }
+
+
+ /* validation of the form */
+.main-form > * {
+    position: relative;
+}
+
+.error-icon,
+.error-text {
+    position: absolute;
+    display: none;
+}
+
+.error-icon {
+    right: 15px;
+    top: 10px;
+    font-size: 1.2rem;
+    color: rgb(223, 53, 53);
+}
+
+.error-text {
+    color: rgb(223, 53, 53);
+    font-size: 0.8rem;
+    right: 0px;
+    bottom: 15px;
+}
+
+
+</style>
+</head>
+<body>
+    <section class="container">
+        <div class="text">
+            <h1 class="text-header">Learn To Code By Watching Others</h1>
+            <p class="text-paragraph">See how experienced developers solve problems in real-time. Watching scripted tutorials is great, but understanding how developers think is in valuable</p>
+        
+        </div>
+        <div class="main">
+            <section class="main-title">
+                <p><strong>Try it free 7 days</strong>, then $20/mo .thereafter</p>
+            </section>
+            <form action="#" method="GET" class="main-form">
+                <div>
+                    <input type="text" placeholder="First Name" name="firstname" id="firstname" required>
+                    <span class="error-icon"><i class="fa-solid fa-circle-exclamation"></i></span>
+                    <p class="error-text"><small>First name cannot be empty</small></p>
+                </div>
+                
+                <div>
+                    <input type="text" placeholder="Last Name" name="lastname" id="lastname" required>
+                    <span class="error-icon"><i class="fa-solid fa-circle-exclamation"></i></span>
+                    <p class="error-text"><small>Last name cannot be empty</small></p>
+                </div>
+
+                <div>
+                    <input type="email" placeholder="Email" name="email" id="email" required>
+                    <span class="error-icon"><i class="fa-solid fa-circle-exclamation"></i></span>
+                    <p class="error-text"><small>Looks like this is not an email</small></p>
+                </div>
+
+                <div>
+                    <input type="password" placeholder="Password" name="password" id="password" required>
+                    <span class="error-icon"><i class="fa-solid fa-circle-exclamation"></i></span>
+                    <p class="error-text"><small>Password connot be empty</small> </p>
+                </div>
+
+
+
+
+                <div>
+                    <input type="submit" value="CLAIM YOUR FREE TRIAL">
+                </div>
+
+                <section class="main-footer">
+                    <p>By clicking the button you are agreeing to our <span>Terms and Services</span><p>
+                </section>
+            </form>
+      
+        </div>
+
+        <div><h3><a href="../grid-colors.html">link to grid colors</a></h3></div>
+        <div><h3><a href="../index.html">link to cards</a></h3></div>
+
+    </section>
+    
+
+
+    <script src="https://kit.fontawesome.com/92b3720d3c.js" crossorigin="anonymous"></script>
+    <script>
+        let firstNameValue = document.getElementById("firstname").value;
+let lastNameValue = document.getElementById("lastname").value;
+let emailValue = document.getElementById("email").value;
+let passwordValue = document.getElementById("password").value;
+
+let errorIcons = document.getElementsByClassName("error-icon");
+let errorTexts = document.getElementsByClassName("error-text");
+console.log(errorIcons[0])
+
+
+
+
+if (firstNameValue.length < 1) {
+    console.log(firstNameValue.length)
+    errorIcons[0].style.display = "block";
+    errorTexts[0].style.display = "block";
+} else {
+    errorIcons[0].style.display = "none";
+    errorTexts[0].style.display = "none";
+}
+    </script>
+    <!-- <script src="./js/app.js"></script> -->
+</body>
+</html>
