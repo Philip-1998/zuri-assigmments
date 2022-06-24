@@ -161,10 +161,16 @@
     position: relative;
 }
 
-.error-icon,
-.error-text {
+input:valid + .error-icon,
+input:valid + .error-icon + .error-text {
     position: absolute;
     display: none;
+}
+
+input:invalid + .error-icon,
+input:invalid + .error-icon + .error-text {
+    position: absolute;
+    display: block;
 }
 
 .error-icon {
@@ -256,14 +262,14 @@ console.log(errorIcons[0])
 
 
 
-if (firstNameValue.length < 1) {
-    console.log(firstNameValue.length)
-    errorIcons[0].style.display = "block";
-    errorTexts[0].style.display = "block";
-} else {
-    errorIcons[0].style.display = "none";
-    errorTexts[0].style.display = "none";
-}
+// if (firstNameValue.length < 1) {
+//     console.log(firstNameValue.length)
+//     errorIcons[0].style.display = "block";
+//     errorTexts[0].style.display = "block";
+// } else {
+//     errorIcons[0].style.display = "none";
+//     errorTexts[0].style.display = "none";
+// }
     </script>
     <!-- <script src="./js/app.js"></script> -->
 </body>
